@@ -4,66 +4,53 @@
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)
 
-A modern, elegant desktop unit and currency converter built with Python and CustomTkinter. Converto features a premium dark UI with a custom display font to handle your everyday unit conversion needs offline, and currency rates online.
+A desktop unit and currency converter built with Python and CustomTkinter. Unit conversions work offline, while currency conversion requires an internet connection.
 
-![Converto Screenshot](Screenshot_default.png)
-![Converto Screenshot](Screenshot_Currency.png)
-![Converto Screenshot](Screenshot_invalid.png)
+![Converto Default](Screenshot_default.png)
+![Converto Currency](Screenshot_Currency.png)
+![Converto Input Validation](Screenshot_invalid.png)
+
 ## Features
 
-- **Multi-Category Conversion** - Easily switch between 11 different categories:
-  - Currency (requires internet connection for real-time rates)
-  - Length
-  - Mass
-  - Volume
-  - Temperature
-  - Energy
-  - Power
-  - Pressure
-  - Speed
-  - Digital Storage
-  - Data Transfer Speed
-- **Live Currency Rates** - Real-time currency conversion pulling data from public APIs.
-- **Premium UI** - Sleek dark mode design utilizing the custom `Anthropic Sans Display` font.
-- **DPI Awareness** - Crisp window scaling support on Windows.
+- **11 conversion categories:** Currency, length, mass, volume, temperature, energy, power, pressure, speed, digital storage, and data transfer speed.
+- **Live exchange rates:** Fetches current currency rates online.
+- **Dark UI:** CustomTkinter interface with the Anthropic Sans Display font.
+- **Windows DPI support:** Scales the interface for different display settings.
 
 ## Installation
 
-### Download Executable
+### Run the executable
 
-You can run `Converto.exe` directly from the project directory. No Python setup or dependency installation required.
+Download `Converto.exe` from the [Releases](https://github.com/toluoguntayo/Converto/releases) page and run it.
 
+### Run from source
+
+1. Install Python and clone this repository.
+2. Install the dependencies:
+
+   ```bash
+   pip install customtkinter requests
+   ```
+
+3. Run the application:
+
+   ```bash
+   python main.py
+   ```
 
 ## Usage
 
-1. **Select Category**: Choose a category from the dropdown menu (e.g., Length, Currency, Speed).
-2. **Choose Units**: Select the "From" and "To" units from their respective dropdown menus.
-3. **Enter Value**: Type the numeric value you wish to convert in the "Value" input field.
-4. **Convert**: Click the "Convert" button to see the formatted result instantly.
+1. Select a conversion category.
+2. Choose the source and target units.
+3. Enter a value.
+4. Click **Convert** to see the result.
 
-## Project Structure
+## Technologies
 
-```
-Converto/
-├── Anthropic Sans-fontiko/   # Folder containing Anthropic Sans 
-├── main.py                   # Main application code
-├── icon.ico                  # Application icon
-├── README.md                 # This file
-├── Screenshot_Currency.png   # App screenshot (Currency view)
-├── Screenshot_default.png    # App screenshot (Default view)
-├── Screenshot_invalid.png    # App screenshot (Error handling view)
-```
-
-## Technology Stack
-
-- **Python 3.14+** - Programming language
-- **CustomTkinter** - Modern UI framework
-- **Requests** - API querying for real-time currency rates
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+- Python
+- CustomTkinter
+- Requests
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT License](LICENSE).
