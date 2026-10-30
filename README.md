@@ -1,56 +1,44 @@
 # Converto
 
-![Python](https://img.shields.io/badge/Python-3.14-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)
+A desktop unit converter built with Python and CustomTkinter.
 
-A desktop unit and currency converter built with Python and CustomTkinter. Unit conversions work offline, while currency conversion requires an internet connection.
-
-![Converto Default](Screenshot_default.png)
-![Converto Currency](Screenshot_Currency.png)
-![Converto Input Validation](Screenshot_invalid.png)
+![Converto unit converter](Screenshots/Screenshot_default.png)
 
 ## Features
 
-- **11 conversion categories:** Currency, length, mass, volume, temperature, energy, power, pressure, speed, digital storage, and data transfer speed.
-- **Live exchange rates:** Fetches current currency rates online.
-- **Dark UI:** CustomTkinter interface with the Anthropic Sans Display font.
-- **Windows DPI support:** Scales the interface for different display settings.
+- Convert units in 11 categories
+- Convert currency using rates from Frankfurter
+- Use offline conversions for non-currency units
+- Select From and To units with dropdowns
 
-## Installation
+## Run from source
 
-### Run the executable
+Requires Python 3.14 and Windows.
 
-Download `Converto.exe` from the [Releases](https://github.com/toluoguntayo/Converto/releases) page and run it.
+```powershell
+python -m pip install -r requirements.txt
+python main.py
+```
 
-### Run from source
+Conversions and settings are not saved locally. Currency amounts are limited to 16 digits. For currency conversions, the entered amount and selected currencies are sent to the Frankfurter API.
 
-1. Install Python and clone this repository.
-2. Install the dependencies:
+## Build the Windows executable
 
-   ```bash
-   pip install customtkinter requests
-   ```
+```powershell
+python -m pip install -r build-requirements.txt
+python -m PyInstaller --clean --noconfirm --onefile --windowed --name Converto --icon icon.ico --add-data "assets;assets" --add-data "icon.ico;." --collect-all customtkinter main.py
+```
 
-3. Run the application:
+The executable is created at `dist/Converto.exe`.
 
-   ```bash
-   python main.py
-   ```
+## Screenshots
 
-## Usage
+![Default converter](Screenshots/Screenshot_default.png)
 
-1. Select a conversion category.
-2. Choose the source and target units.
-3. Enter a value.
-4. Click **Convert** to see the result.
+![Successful conversion](Screenshots/Screenshot_conversion.png)
 
-## Technologies
+![Invalid input](Screenshots/Screenshot_error.png)
 
-- Python
-- CustomTkinter
-- Requests
+## Licenses
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+The application source is licensed under the MIT License; see [LICENSE](LICENSE). The bundled JetBrains Mono font is licensed under SIL OFL 1.1; see [assets/OFL.txt](assets/OFL.txt).
